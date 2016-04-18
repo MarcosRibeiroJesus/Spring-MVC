@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+	
 <!-- Inserindo o thymeleaf no html -->
 <head>
 <meta charset="UTF-8" />
 <title>Cadastro de título</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
-<body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <img alt="AlgaWorks"
-					src="/images/logo-algaworks.png" />
-				</a>
-			</div>
-		</div>
-	</nav>
 
-	<form class="form-horizontal" method="POST" action="/titulos">
+<section layout:fragment="conteudo" >
+
+		<form class="form-horizontal" method="POST" action="/titulos">
 		<div class="alert alert-sucess" th:if="${!#strings.isEmpty(mensagem)}">
 			<span th:text="${mensagem}"></span>
 		</div>
@@ -71,7 +64,5 @@
 			</div>
 		</div>
 	</form>
-	<script src="/js/jquery-2.2.0.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-</body>
+</section> 
 </html>
